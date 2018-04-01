@@ -5,15 +5,15 @@ def sampleFunction(test_string):
 	print(test_string)
 
 # Fibonicci Function
-def fibonicci(num_iterations, value1=0, value2=1):
-	if num_iterations == 0:
-		return ''
+def fibonacci(num_iterations, value1=0, value2=1):
 	new_value2 = value1 + value2
 	new_value1 = value2
-	if num_iterations == 1:
-		r_list = f'{new_value1} {fibonicci(num_iterations-1, value1=new_value1, value2=new_value2)}'
+	if num_iterations == 0:
+		return ''
+	elif num_iterations == 1:
+		r_list = f'{new_value1} {fibonacci(num_iterations-1, value1=new_value1, value2=new_value2)}'
 	else:
-		r_list = f'{new_value1}, {fibonicci(num_iterations-1, value1=new_value1, value2=new_value2)}'
+		r_list = f'{new_value1}, {fibonacci(num_iterations-1, value1=new_value1, value2=new_value2)}'
 	return r_list
 
 # Simple Counter Class
@@ -35,7 +35,7 @@ if len(sys.argv) > 1:
 else:
 	num_iterations = 10
 
-print(fibonicci(num_iterations))
+print(fibonacci(num_iterations))
 
 print('Class Object Example')
 counter_instance = Counter(['even', 'odd'])
